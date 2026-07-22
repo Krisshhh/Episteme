@@ -1,0 +1,21 @@
+{
+  "name": "knowledge-collision-extension",
+  "version": "1.0.0",
+  "description": "Backend and scripts for the Episteme - an AI powered knowledge collision extension",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test-agent1": "node scripts/test-agent1.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@mozilla/readability": "^0.6.0",
+    "@supabase/supabase-js": "^2.45.0",
+    "string-similarity": "^4.0.4"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

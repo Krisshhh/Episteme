@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Episteme</title>
+  <link rel="stylesheet" href="panel.css" />
+</head>
+<body>
+  <header>
+    <span class="logo">&#9670; Episteme</span>
+    <nav class="tab-nav" role="tablist">
+      <button id="tab-reading" class="tab active" role="tab" aria-selected="true" aria-controls="view-reading">Reading</button>
+      <button id="tab-library" class="tab" role="tab" aria-selected="false" aria-controls="view-library">Library</button>
+    </nav>
+  </header>
+
+  <!-- ── READING VIEW (Stage 5/6) ──────────────────────────────────────── -->
+  <main id="view-reading" role="tabpanel">
+    <p id="status" class="status"></p>
+
+    <div id="extract-loader" class="loader" style="display:none;">
+      <span class="spinner"></span> Analysing article&hellip;
+    </div>
+
+    <section id="thesis-section" style="display:none;">
+      <h2 class="section-label">Thesis</h2>
+      <p id="thesis-text" class="thesis-text"></p>
+
+      <h2 class="section-label">Assertions</h2>
+      <ul id="assertions-list" class="assertions-list"></ul>
+
+      <div id="domain-tags" class="domain-tags"></div>
+    </section>
+
+    <button id="collide-btn" class="btn-primary" style="display:none;">
+      &#128218; Check against my library
+    </button>
+
+    <div id="collide-loader" class="loader" style="display:none;">
+      <span class="spinner"></span> Searching library&hellip;
+    </div>
+
+    <section id="collision-section"></section>
+  </main>
+
+  <!-- ── LIBRARY VIEW (Stage 7) ────────────────────────────────────────── -->
+  <main id="view-library" role="tabpanel" style="display:none;">
+    <div id="library-loader" class="loader" style="display:none;">
+      <span class="spinner"></span> Loading library&hellip;
+    </div>
+
+    <p id="library-status" class="status"></p>
+
+    <section id="library-list"></section>
+  </main>
+
+  <script src="panel.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/extract-thesis.js": {
+      "maxDuration": 60
+    }
+  }
+}

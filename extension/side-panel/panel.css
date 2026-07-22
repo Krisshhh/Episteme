@@ -1,0 +1,284 @@
+/* ── Reset ────────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #e2e8f0;
+  background: #0f0e17;
+  min-height: 100vh;
+}
+
+/* ── Header ───────────────────────────────────────────────────────────────── */
+header {
+  padding: 8px 14px;
+  background: #1a1830;
+  border-bottom: 1px solid #2d2b4e;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.logo {
+  font-size: 13px;
+  font-weight: 700;
+  color: #a78bfa;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* ── Tab nav ──────────────────────────────────────────────────────────────── */
+.tab-nav {
+  display: flex;
+  gap: 2px;
+  background: #0f0e17;
+  border-radius: 6px;
+  padding: 2px;
+}
+.tab {
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.tab:hover { color: #a78bfa; }
+.tab.active {
+  background: #2d2b4e;
+  color: #e2e8f0;
+}
+
+
+/* ── Main content ─────────────────────────────────────────────────────────── */
+main { padding: 14px; }
+
+.status {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-bottom: 10px;
+  min-height: 16px;
+}
+
+/* ── Loader ───────────────────────────────────────────────────────────────── */
+.loader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #94a3b8;
+  font-size: 12px;
+  margin: 12px 0;
+}
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #2d2b4e;
+  border-top-color: #a78bfa;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Section labels ───────────────────────────────────────────────────────── */
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  margin: 14px 0 6px;
+}
+
+/* ── Thesis text ──────────────────────────────────────────────────────────── */
+.thesis-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #e2e8f0;
+  background: #1a1830;
+  border-left: 3px solid #7c3aed;
+  padding: 8px 10px;
+  border-radius: 0 4px 4px 0;
+}
+
+/* ── Assertions list ──────────────────────────────────────────────────────── */
+.assertions-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.assertion {
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border-left: 3px solid transparent;
+}
+.assertion.grounded {
+  background: #14222f;
+  border-left-color: #22c55e;
+  color: #d1fae5;
+}
+.assertion.ungrounded {
+  background: #1f1a2e;
+  border-left-color: #64748b;
+  color: #94a3b8;
+}
+
+/* ── Domain tags ──────────────────────────────────────────────────────────── */
+.domain-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 10px;
+}
+.tag {
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #2d2b4e;
+  color: #a78bfa;
+  font-weight: 600;
+}
+
+/* ── Primary button ───────────────────────────────────────────────────────── */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  margin-top: 14px;
+  padding: 9px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #7c3aed;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-primary:hover:not(:disabled) { background: #6d28d9; }
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Collision cards ──────────────────────────────────────────────────────── */
+#collision-section { margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
+
+.collision-card {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #2d2b4e;
+  background: #1a1830;
+}
+
+/* relationship colour coding */
+.rel-supports  { border-left: 3px solid #22c55e; }
+.rel-contradicts { border-left: 3px solid #ef4444; }
+.rel-extends   { border-left: 3px solid #3b82f6; }
+
+/* ── Badges ───────────────────────────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+.badge-supports    { background: #14532d; color: #4ade80; }
+.badge-contradicts { background: #450a0a; color: #f87171; }
+.badge-extends     { background: #1e3a5f; color: #60a5fa; }
+.badge-none        { background: #1e293b; color: #64748b; }
+
+/* ── Rationale ────────────────────────────────────────────────────────────── */
+.rationale {
+  font-size: 12px;
+  color: #cbd5e1;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* ── Citation pair ────────────────────────────────────────────────────────── */
+.assertion-pair { display: flex; flex-direction: column; gap: 5px; }
+.cite-block { font-size: 11px; }
+.cite-label {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #475569;
+  margin-bottom: 2px;
+}
+.cite-text {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* ── Citation warning ─────────────────────────────────────────────────────── */
+.citation-warning {
+  display: inline-block;
+  font-size: 10px;
+  color: #f59e0b;
+  margin-left: 6px;
+}
+
+/* ── Empty state ──────────────────────────────────────────────────────────── */
+.empty {
+  font-size: 12px;
+  color: #475569;
+  text-align: center;
+  padding: 20px 10px;
+  line-height: 1.6;
+}
+
+/* ── Library cards (Stage 7) ──────────────────────────────────────────────── */
+#library-list { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+
+.library-card {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #2d2b4e;
+  background: #1a1830;
+}
+.library-card-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.library-card-thesis {
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.library-card-edges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.library-card-edges .badge { margin-bottom: 0; }
+.no-edges {
+  font-size: 10px;
+  color: #334155;
+  font-style: italic;
+}
